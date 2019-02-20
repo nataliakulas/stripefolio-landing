@@ -40,7 +40,7 @@ const Layout = ({ children, theme }) => (
         <Background background={makePrimary(theme)}>
           <Container>
             <Row>
-              <Col xs={12} sm={10} lg={8} offset={{ sm: 1, lg: 2 }}>
+              <Col xs={12} md={10} lg={8} offset={{ md: 1, lg: 2 }}>
                 {children}
               </Col>
             </Row>

@@ -9,7 +9,7 @@ export const Label = styled.span`
   line-height: 40px;
   color: ${({ theme }) => makeSecondary(theme)};
   letter-spacing: 0.55px;
-  transform: translateX(-100px);
+  transform: translateX(-75px);
   transition: all 0.3s;
 `;
 
@@ -57,7 +57,7 @@ export const LinkButton = styled.a`
   width: 75px;
   height: 40px;
   position: absolute;
-  top: 0;
+  top: ${({ top }) => top || 0}px;
   right: 0;
   z-index: 10;
   display: flex;
@@ -94,10 +94,11 @@ export const LinkButton = styled.a`
 `;
 
 export const LinkOuter = styled.a`
-  width: 200px;
+  width: 100%;
   height: 50px;
+
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   color: ${({ theme }) => makeSecondary(theme)};
   text-decoration: none;
@@ -105,16 +106,32 @@ export const LinkOuter = styled.a`
 
   border: 2px solid ${({ theme }) => makeSecondary(theme)};
   background-color: ${color.white};
-  padding: 15px 20px;
+  padding: 5px 10px;
 
   cursor: pointer;
+
+  @media (min-width: 375px) {
+    padding: 15px 10px;
+  }
+
+  @media (min-width: 568px) {
+    width: 260px;
+    height: 70px;
+  }
+
+  @media (min-width: 768px) {
+    width: 200px;
+    font-size: 15px;
+    padding: 15px 20px;
+  }
 `;
 
 export const LinkInner = styled(Link)`
-  width: 200px;
+  width: 100%;
   height: 50px;
+
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   color: ${color.white};
   text-decoration: none;
@@ -122,7 +139,26 @@ export const LinkInner = styled(Link)`
 
   border: 2px solid ${({ theme }) => makeSecondary(theme)};
   background-color: ${({ theme }) => makeSecondary(theme)};
-  padding: 15px 20px;
+
+  padding: 5px 10px;
+  margin-bottom: 10px;
 
   cursor: pointer;
+
+  @media (min-width: 375px) {
+    padding: 15px 10px;
+  }
+
+  @media (min-width: 568px) {
+    width: 260px;
+    height: 70px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: 200px;
+    font-size: 15px;
+
+    padding: 15px 20px;
+  }
 `;

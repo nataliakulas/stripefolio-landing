@@ -17,7 +17,7 @@ import {
   P
 } from "../components";
 
-const IndexPage = () => {
+export default () => {
   const [settings, toggleSettings] = useState(false);
   const [theme, changeTheme] = useState(type.GREY);
 
@@ -25,7 +25,7 @@ const IndexPage = () => {
     <Layout theme={theme}>
       <Wrapper>
         <Section>
-          <Content top>
+          <Content>
             <SettingsBar visible={settings}>
               <Separator theme={makePrimary(theme)} />
               <Square
@@ -41,31 +41,34 @@ const IndexPage = () => {
                 onClick={() => changeTheme(type.GREY)}
               />
             </SettingsBar>
-            <SettingsButton onClick={() => toggleSettings(!settings)}>
+            <Button onClick={() => toggleSettings(!settings)}>
               <Label theme={theme}>Settings</Label>
               <Icon id={type.SETTINGS} theme={theme} />
-            </SettingsButton>
-            <LinkedinButton
+            </Button>
+            <LinkButton
               href="https://www.linkedin.com/in/natalia-kulas"
               target="_blank"
               rel="noopener noreferrer"
+              top={50}
             >
               <Label theme={theme}>LinkedIn</Label>
               <Icon id={type.LINKEDIN} theme={theme} />
-            </LinkedinButton>
-            <GithubButton
+            </LinkButton>
+            <LinkButton
               href="https://github.com/nataliakulas"
               target="_blank"
               rel="noopener noreferrer"
+              top={100}
             >
               <Label theme={theme}>Github</Label>
               <Icon id={type.GITHUB} theme={theme} />
-            </GithubButton>
+            </LinkButton>
             <H1 theme={theme}>Hello!</H1>
-            <Bin inline>
-              <P>If you are here, it means, that you are faster than I am! </P>
+            <P>
+              If you are here, it means, that you are faster
+              than&nbsp;I&nbsp;am!&nbsp;
               <Icon id={type.SMILE} theme={theme} />
-            </Bin>
+            </P>
             <P theme={theme}>
               Right now, I'm <strong>upgrading</strong> this page and it can
               take a&nbsp;while.
@@ -73,17 +76,18 @@ const IndexPage = () => {
           </Content>
           <Content>
             <P theme={theme}>
-              That is because I'm fully dedicated in developing real estate
-              portal (with custom admin panel) and if I have some spare time,
-              I'm <strong>mentoring</strong> junior frontend dev.
+              That is because I'm fully dedicated in <strong>developing</strong>
+              &nbsp;real estate portal (with custom admin panel) and if I have
+              some spare time, I'm <strong>mentoring</strong> junior front-end
+              dev.
             </P>
             <Bin>
-              <Subpage theme={theme} to="/cid">
-                Check out this cool CID project
-              </Subpage>
-              <StripeFolio theme={theme} href="https://stripefolio.surge.sh">
+              <LinkInner theme={theme} to="/cid">
+                Check out this cool project of yours
+              </LinkInner>
+              <LinkOuter theme={theme} href="https://stripefolio.surge.sh">
                 Show <i>currently-not-so-actual</i> portfolio
-              </StripeFolio>
+              </LinkOuter>
             </Bin>
           </Content>
         </Section>
@@ -91,8 +95,6 @@ const IndexPage = () => {
     </Layout>
   );
 };
-
-export default IndexPage;
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -112,98 +114,92 @@ const Wrapper = styled.div`
 
 const Section = styled.div`
   width: 100%;
-  max-height: 470px;
   background-color: ${color.white};
-  overflow: hidden;
-  flex: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 20px auto;
 
-  @media (min-width: 375px) and (max-width: 413px) {
-    max-height: 390px;
+  @media (min-width: 375px) {
+    max-height: 500px;
+    overflow-y: hidden;
   }
 
-  @media (min-width: 414px) and (max-width: 567px) {
-    max-height: 365px;
-  }
-
-  @media (min-width: 568px) and (max-width: 666px) {
-    max-height: 240px;
-  }
-
-  @media (min-width: 667px) and (max-width: 735px) {
-    max-height: 295px;
-  }
-
-  @media (min-width: 736px) and (max-width: 767px) {
-    max-height: 290px;
+  @media (min-width: 568px) {
+    overflow-y: scroll;
   }
 
   @media (min-width: 768px) {
-    max-height: 400px;
+    overflow-y: hidden;
   }
 `;
 
 const Content = styled.div`
   position: relative;
-  padding: 20px ${({ top }) => (top ? 95 : 50)}px 25px 50px;
-`;
+  padding: 20px 20px 25px 20px;
 
-const LinkedinButton = styled(LinkButton)`
-  color: ${color.turquoise};
-  top: 50px;
-`;
+  &:first-of-type {
+    padding-right: 55px;
+  }
 
-const GithubButton = styled(LinkButton)`
-  color: ${color.turquoise};
-  top: 100px;
+  @media (min-width: 375px) {
+    &:first-of-type {
+      padding-right: 70px;
+    }
+  }
+
+  @media (min-width: 414px) {
+    &:first-of-type {
+      padding-right: 80px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 20px 50px 25px 50px;
+
+    &:first-of-type {
+      padding-right: 95px;
+    }
+  }
 `;
 
 const Bin = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: ${({ inline }) => (inline ? "flex-start" : "space-between")};
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: ${({ inline }) => (inline ? 5 : 30)}px auto;
-`;
+  margin: 30px auto 10px auto;
 
-const StripeFolio = styled(LinkOuter)`
-  height: 70px;
-`;
+  @media (min-width: 568px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-const Subpage = styled(LinkInner)`
-  height: 70px;
-`;
-
-const SettingsButton = styled(Button)`
-  color: ${color.turquoise};
+  @media (min-width: 768px) {
+    margin: 30px auto;
+  }
 `;
 
 const SettingsBar = styled.div`
   width: 75px;
-  height: 185px;
+  height: 125px;
 
   position: absolute;
   top: 50px;
   right: 0;
   z-index: 100;
-  transform: translateX(${({ visible }) => (visible ? 0 : 100)}px);
+  transform: translateX(${({ visible }) => (visible ? 0 : 75)}px);
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
 
+  background-color: ${color.white};
+
   padding: 0 8px;
 
-  background-color: ${color.white};
   transition: transform 0.3s ease;
-
-  @media (min-width: 568px) and (max-width: 666px) {
-    height: 145px;
-  }
-
-  @media (min-width: 768px) {
-    height: 100%;
-  }
 `;
 
 const Square = styled.div`

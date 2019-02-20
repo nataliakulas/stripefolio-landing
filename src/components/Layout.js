@@ -41,7 +41,9 @@ const Layout = ({ children, theme }) => (
           <Container>
             <Row>
               <Col xs={12} md={10} lg={8} offset={{ md: 1, lg: 2 }}>
+                <Wrapper>
                 {children}
+                </Wrapper>
               </Col>
             </Row>
           </Container>
@@ -59,4 +61,20 @@ const Background = styled.div`
     `repeating-linear-gradient(${background} 0, ${background} 50px, ${
       color.white
     } 0, ${color.white} 100px)`};
+`;
+
+const Wrapper = styled.div`
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    max-width: 595px;
+    margin: 0 auto;
+  }
 `;

@@ -23,94 +23,76 @@ export default () => {
 
   return (
     <Layout theme={theme}>
-      <Wrapper>
-        <Section>
-          <Content>
-            <SettingsBar visible={settings}>
-              <Separator theme={makePrimary(theme)} />
-              <Square
-                theme={makePrimary(type.BLACK)}
-                onClick={() => changeTheme(type.BLACK)}
-              />
-              <Square
-                theme={makePrimary(type.ORANGE)}
-                onClick={() => changeTheme(type.ORANGE)}
-              />
-              <Square
-                theme={makePrimary(type.GREY)}
-                onClick={() => changeTheme(type.GREY)}
-              />
-            </SettingsBar>
-            <Button onClick={() => toggleSettings(!settings)}>
-              <Label theme={theme}>Settings</Label>
-              <Icon id={type.SETTINGS} theme={theme} />
-            </Button>
-            <LinkButton
-              href="https://www.linkedin.com/in/natalia-kulas"
-              target="_blank"
-              rel="noopener noreferrer"
-              top={50}
-            >
-              <Label theme={theme}>LinkedIn</Label>
-              <Icon id={type.LINKEDIN} theme={theme} />
-            </LinkButton>
-            <LinkButton
-              href="https://github.com/nataliakulas"
-              target="_blank"
-              rel="noopener noreferrer"
-              top={100}
-            >
-              <Label theme={theme}>Github</Label>
-              <Icon id={type.GITHUB} theme={theme} />
-            </LinkButton>
-            <H1 theme={theme}>Hello!</H1>
-            <P>
-              If you are here, it means, that you are faster
-              than&nbsp;I&nbsp;am!&nbsp;
-              <Icon id={type.SMILE} theme={theme} />
-            </P>
-            <P theme={theme}>
-              Right now, I'm <strong>upgrading</strong> this page and it can
-              take a&nbsp;while.
-            </P>
-          </Content>
-          <Content>
-            <P theme={theme}>
-              That is because I'm fully dedicated in <strong>developing</strong>
-              &nbsp;real estate portal (with custom admin panel) and if I have
-              some spare time, I'm <strong>mentoring</strong> junior front-end
-              dev.
-            </P>
-            <Bin>
-              <LinkInner theme={theme} to="/cid">
-                Check out this cool project of yours
-              </LinkInner>
-              <LinkOuter theme={theme} href="https://stripefolio.surge.sh">
-                Show <i>currently-not-so-actual</i> portfolio
-              </LinkOuter>
-            </Bin>
-          </Content>
-        </Section>
-      </Wrapper>
+      <Section>
+        <Content>
+          <SettingsBar visible={settings}>
+            <Separator theme={makePrimary(theme)} />
+            <Square
+              theme={makePrimary(type.BLACK)}
+              onClick={() => changeTheme(type.BLACK)}
+            />
+            <Square
+              theme={makePrimary(type.ORANGE)}
+              onClick={() => changeTheme(type.ORANGE)}
+            />
+            <Square
+              theme={makePrimary(type.GREY)}
+              onClick={() => changeTheme(type.GREY)}
+            />
+          </SettingsBar>
+          <Button onClick={() => toggleSettings(!settings)}>
+            <Label theme={theme}>Settings</Label>
+            <Icon id={type.SETTINGS} theme={theme} />
+          </Button>
+          <LinkButton
+            href="https://www.linkedin.com/in/natalia-kulas"
+            target="_blank"
+            rel="noopener noreferrer"
+            top={50}
+          >
+            <Label theme={theme}>LinkedIn</Label>
+            <Icon id={type.LINKEDIN} theme={theme} />
+          </LinkButton>
+          <LinkButton
+            href="https://github.com/nataliakulas"
+            target="_blank"
+            rel="noopener noreferrer"
+            top={100}
+          >
+            <Label theme={theme}>Github</Label>
+            <Icon id={type.GITHUB} theme={theme} />
+          </LinkButton>
+          <H1 theme={theme}>Hello!</H1>
+          <P>
+            If you are here, it means, that you are faster
+            than&nbsp;I&nbsp;am!&nbsp;
+            <Icon id={type.SMILE} theme={theme} />
+          </P>
+          <P theme={theme}>
+            Right now, I'm <strong>upgrading</strong> this page and it can take
+            a&nbsp;while.
+          </P>
+        </Content>
+        <Content>
+          <P theme={theme}>
+            That is because I'm fully dedicated in <strong>developing</strong>
+            &nbsp;real estate portal (with custom admin panel) and if I have
+            some spare time, I'm <strong>mentoring</strong> junior front-end
+            dev.
+          </P>
+          <Bin>
+            <LinkInner theme={theme} to="/cid">
+              Check out this cool project of yours
+            </LinkInner>
+            <LinkOuter theme={theme} href="https://stripefolio.surge.sh">
+              Show <i>currently-not-so-actual</i> portfolio
+            </LinkOuter>
+          </Bin>
+        </Content>
+      </Section>
     </Layout>
   );
 };
-
-const Wrapper = styled.div`
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  overflow: hidden;
-
-  @media (min-width: 768px) {
-    max-width: 595px;
-    margin: 0 auto;
-  }
-`;
 
 const Section = styled.div`
   width: 100%;

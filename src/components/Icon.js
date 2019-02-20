@@ -3,10 +3,10 @@ import styled from "styled-components";
 import type from "../shared/consts";
 
 const Svg = styled.svg`
-  min-width: ${({ id }) => (id === type.SMILE ? 20 : 40)}px;
-  min-height: ${({ id }) => (id === type.SMILE ? 20 : 40)}px;
+  min-width: ${({ id }) => (id === type.SMILE ? 15 : 40)}px;
+  min-height: ${({ id }) => (id === type.SMILE ? 15 : 40)}px;
   transition: all 0.3s;
-  transform: translate(${({ id }) => (id === type.SMILE ? 10 : 50)}px, 0);
+  transform: translate(${({ id }) => (id === type.SMILE ? 5 : 50)}px, 0);
 `;
 
 export default ({ id, fill }) => {
@@ -23,8 +23,8 @@ export default ({ id, fill }) => {
 
   return (
     <Svg
-      width={id === type.SMILE ? 20 : 40}
-      height={id === type.SMILE ? 20 : 40}
+      width={id === type.SMILE ? 15 : 40}
+      height={id === type.SMILE ? 15 : 40}
       viewBox={viewBox(id)}
       id={id}
     >

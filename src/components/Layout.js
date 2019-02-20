@@ -8,6 +8,8 @@ import color from "../shared/colors";
 
 import Global from "./Global";
 
+import favicon from "../images/favicon.ico";
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -27,7 +29,8 @@ const Layout = ({ children }) => (
             {
               rel: "stylesheet",
               href: "https://fonts.googleapis.com/css?family=Comfortaa"
-            }
+            },
+            { rel: "icon", href: `${favicon}` }
           ]}
         >
           <html lang="en" />

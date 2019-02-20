@@ -120,7 +120,7 @@ export const LinkOuter = styled.a`
   }
 
   @media (min-width: 768px) {
-    width: 200px;
+    width: 220px;
     font-size: 15px;
     padding: 15px 20px;
   }
@@ -156,7 +156,7 @@ export const LinkInner = styled(Link)`
   }
 
   @media (min-width: 768px) {
-    width: 200px;
+    width: 220px;
     font-size: 15px;
 
     padding: 15px 20px;

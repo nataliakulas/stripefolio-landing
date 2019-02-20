@@ -81,10 +81,13 @@ export default () => {
             dev.
           </P>
           <Bin>
-            <LinkInner theme={theme} to="/cid">
+            <LinkInner theme={theme} to="/project">
               Check out this cool project of yours
             </LinkInner>
-            <LinkOuter theme={theme} href="https://stripefolio.surge.sh">
+            <LinkOuter
+              theme={theme}
+              href="https://stripefolio-deprecated.surge.sh/"
+            >
               Show <i>currently-not-so-actual</i> portfolio
             </LinkOuter>
           </Bin>

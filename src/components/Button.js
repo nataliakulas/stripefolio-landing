@@ -1,19 +1,20 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
 import color from "../shared/colors";
+import { makeSecondary } from "../shared/helpers";
 
 export const Label = styled.span`
-  min-width: 80px;
+  min-width: 75px;
   font-weight: 700;
   line-height: 40px;
-  color: ${({ color }) => color};
+  color: ${({ theme }) => makeSecondary(theme)};
   letter-spacing: 0.55px;
   transform: translateX(-100px);
   transition: all 0.3s;
 `;
 
 export const Button = styled.button`
-  width: 100px;
+  width: 75px;
   height: 40px;
   position: absolute;
   top: 0;
@@ -53,7 +54,7 @@ export const Button = styled.button`
 `;
 
 export const LinkButton = styled.a`
-  width: 100px;
+  width: 75px;
   height: 40px;
   position: absolute;
   top: 0;
@@ -98,11 +99,11 @@ export const LinkOuter = styled.a`
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;
-  color: ${color.turquoise};
+  color: ${({ theme }) => makeSecondary(theme)};
   text-decoration: none;
   text-align: center;
 
-  border: 2px solid ${color.turquoise};
+  border: 2px solid ${({ theme }) => makeSecondary(theme)};
   background-color: ${color.white};
   padding: 15px 20px;
 
@@ -119,8 +120,8 @@ export const LinkInner = styled(Link)`
   text-decoration: none;
   text-align: center;
 
-  border: 2px solid ${color.turquoise};
-  background-color: ${color.turquoise};
+  border: 2px solid ${({ theme }) => makeSecondary(theme)};
+  background-color: ${({ theme }) => makeSecondary(theme)};
   padding: 15px 20px;
 
   cursor: pointer;

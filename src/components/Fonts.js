@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import color from "../shared/colors";
+import { makeSecondary } from "../shared/helpers";
 
 export const H1 = styled.h1`
-  color: ${color.turquoise};
+  font-size: 30px;
+  line-height: 30px;
+  color: ${({ theme }) => makeSecondary(theme)};
+  margin-top: 0;
 `;
 
 export const P = styled.p`
   margin: ${({ margin }) => margin || 0};
 
-  span {
-    position: relative;
-    color: ${color.turquoise};
+  strong {
+    color: ${({ theme }) => makeSecondary(theme)};
   }
 `;

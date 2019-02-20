@@ -5,12 +5,13 @@ import styled from "styled-components";
 import { Container, Row, Col } from "react-grid-system";
 
 import color from "../shared/colors";
+import { makePrimary } from "../shared/helpers";
 
 import Global from "./Global";
 
 import favicon from "../images/favicon.ico";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, theme }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -36,7 +37,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Global />
-        <Background background={color.grey}>
+        <Background background={makePrimary(theme)}>
           <Container>
             <Row>
               <Col xs={12} sm={10} lg={8} offset={{ sm: 1, lg: 2 }}>

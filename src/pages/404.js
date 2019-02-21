@@ -21,6 +21,5 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${color.white};
-  overflow: hidden;
   margin: 20px auto;
 `;

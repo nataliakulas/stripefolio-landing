@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import color from "../shared/colors";
 import type from "../shared/consts";
-import { Layout, H1, P } from "../components";
+import { Layout, P } from "../components";
 
 export default () => {
   return (
@@ -17,7 +17,7 @@ export default () => {
           stage. We are still developing some new features.
         </P>
         <P theme={type.GREY}>
-          Below, you can see the <strong>live preview</strong>, but I bet, you
+          Below, you can see the <strong>preview</strong>, but I&nbsp;bet, you
           would rather check it by yourself.
         </P>
         <Wrapper>
@@ -28,14 +28,14 @@ export default () => {
         </Wrapper>
         <P theme={type.GREY}>
           Page is build in <strong>ReactJS</strong>, with some crucial
-          libraries: <strong>Redux</strong> for state management,&#32;
-          <strong>Styled-Components</strong> for styling, and&#32;
+          libraries: <strong>Redux</strong> for state management,&nbsp;
+          <strong>Styled-Components</strong> for styling, and&nbsp;
           <strong>React-Intl</strong> for multilanguage purposes and some other
           useful packages as well.
         </P>
         <P theme={type.GREY}>
-          I've also <strong>designed it by myself</strong> (with a little bit of
-          inspiration).
+          I've also <strong>designed it by myself</strong> (with a&nbsp;little
+          bit of inspiration).
         </P>
         <P theme={type.GREY}>
           Additionally my client wanted to{" "}
@@ -46,7 +46,7 @@ export default () => {
         </P>
         <P>
           <a href="mailto:nataliakulas@gmail.com">
-            If you would like to test it, please contact me.
+            If you would like to test it, please contact&nbsp;me.
           </a>
         </P>
       </Section>
@@ -56,9 +56,9 @@ export default () => {
 
 const Section = styled.div`
   width: 100%;
-  height: 875px;
-
   background-color: ${color.white};
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin: 20px auto;
   padding: 20px 20px 25px 20px;
 
@@ -99,22 +99,51 @@ const Section = styled.div`
       display: block;
     }
   }
+
+  @media (min-width: 768px) {
+    overflow-y: auto;
+  }
 `;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 360px;
+  height: 220px;
   position: relative;
+
+  @media (min-width: 375px) {
+    height: 240px;
+  }
+
+  @media (min-width: 768px) {
+    height: 360px;
+  }
 `;
 
 const Preview = styled.iframe`
   width: 1920px;
   height: 1080px;
   position: absolute;
-  top: -350px;
-  left: -690px;
+  top: -410px;
+  left: -835px;
+  transform: scale(0.13);
+
   border: none;
   overflow: hidden;
-  transform: scale(0.28);
   pointer-events: none;
+
+  @media (min-width: 375px) {
+    left: -815px;
+    transform: scale(0.15);
+  }
+
+  @media (min-width: 414px) {
+    left: -795px;
+    transform: scale(0.17);
+  }
+
+  @media (min-width: 768px) {
+    top: -350px;
+    left: -690px;
+    transform: scale(0.28);
+  }
 `;

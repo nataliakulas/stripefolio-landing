@@ -5,7 +5,7 @@ import color from "../shared/colors";
 import type from "../shared/consts";
 
 import { Layout, P } from "../components";
-import { Bar, Panel } from "../components/Mixins";
+import { Bar, BoldNoDeco, Panel } from "../components/Mixins";
 
 export default () => {
   return (
@@ -71,9 +71,7 @@ const Section = styled.div`
   }
 
   a {
-    font-weight: 700;
-    position: relative;
-    text-decoration: none;
+    ${BoldNoDeco};
     color: ${color.turquoise};
 
     &:before,

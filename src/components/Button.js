@@ -2,12 +2,11 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import color from "../shared/colors";
 import { makeSecondary } from "../shared/helpers";
-import { LinkButton, IconButton, Bar } from "./Mixins";
+import { LinkButton, IconButton, Bar, BoldNoDeco } from "./Mixins";
 
 export const Label = styled.span`
+  ${BoldNoDeco};
   min-width: 75px;
-  position: relative;
-  font-weight: 700;
   line-height: 40px;
   color: ${({ theme }) => makeSecondary(theme)};
 

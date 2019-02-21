@@ -7,6 +7,12 @@ export const BasicFont = `
   text-decoration: none;
 `;
 
+export const BoldNoDeco = `
+  font-weight: 700;
+  position: relative;
+  text-decoration: none;
+`;
+
 export const FlexCentered = `
   display: flex;
   justify-content: center;
@@ -72,13 +78,12 @@ export const IconButton = `
 `;
 
 export const LinkButton = `
+  ${BoldNoDeco};
   width: 100%;
   height: 50px;
-  position: relative;
-  font-weight: 700;
+  
   font-size: 14px;
   line-height: 20px;
-  text-decoration: none;
   text-align: center;
   padding: 5px 10px;
   cursor: pointer;

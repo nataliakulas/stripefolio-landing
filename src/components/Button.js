@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import color from "../shared/colors";
 import { makeSecondary } from "../shared/helpers";
-import { LinkButton, IconButton } from "./Common";
+import { LinkButton, IconButton, Bar } from "./Common";
 
 export const Label = styled.span`
   min-width: 75px;
@@ -10,7 +10,7 @@ export const Label = styled.span`
   font-weight: 700;
   line-height: 40px;
   color: ${({ theme }) => makeSecondary(theme)};
-  letter-spacing: 0.55px;
+
   transform: translateX(-75px);
   transition: all 0.3s;
 
@@ -18,15 +18,7 @@ export const Label = styled.span`
     link &&
     css`
       &:after {
-        content: "";
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        left: 0;
-        background-color: ${color.turquoise};
-      }
-
-      &:after {
+        ${Bar};
         bottom: 10px;
       }
     `}

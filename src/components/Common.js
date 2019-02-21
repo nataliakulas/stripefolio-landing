@@ -18,6 +18,23 @@ export const NoBorder = `
   background-color: ${color.white};
 `;
 
+export const Panel = `
+  width: 100%;
+  background-color: ${color.white};
+  margin: 20px auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+`;
+
+export const Bar = `
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  background-color: ${color.turquoise};
+`;
+
 export const IconButton = `
   ${FlexCentered};
   ${BasicFont};
@@ -67,11 +84,9 @@ export const LinkButton = `
 
   &:before,
   &:after {
+    ${Bar};
     display: none;
-    content: "";
     width: calc(100% - 4px);
-    height: 2px;
-    position: absolute;
     left: 2px;
   }
   
@@ -102,12 +117,4 @@ export const LinkButton = `
     font-size: 15px;
     padding: 15px 20px;
   }
-`;
-
-export const Panel = `
-  width: 100%;
-  background-color: ${color.white};
-  margin: 20px auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
 `;

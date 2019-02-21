@@ -5,7 +5,7 @@ import color from "../shared/colors";
 import type from "../shared/consts";
 
 import { Layout, P } from "../components";
-import { Panel } from "../components/Common";
+import { Bar, Panel } from "../components/Common";
 
 export default () => {
   return (
@@ -78,12 +78,7 @@ const Section = styled.div`
 
     &:before,
     &:after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      position: absolute;
-      left: 0;
-      background-color: ${color.turquoise};
+      ${Bar};
     }
 
     &:before {

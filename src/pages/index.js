@@ -84,6 +84,9 @@ export default () => {
             some spare time, I'm <strong>mentoring</strong> junior front-end
             dev.
           </P>
+          <P theme={theme} margin={10}>
+            And yes, I like stripes.
+          </P>
           <Bin>
             <LinkButtonInner theme={theme} to="/project">
               Check out this cool project of yours
@@ -140,7 +143,7 @@ const Content = styled.div`
   }
 
   @media (min-width: 768px) {
-    padding: 20px 50px 25px 50px;
+    padding: 20px 50px 15px 50px;
 
     &:first-of-type {
       padding-right: 95px;

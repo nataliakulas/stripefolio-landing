@@ -9,7 +9,7 @@ export const H1 = styled.h1`
 `;
 
 export const P = styled.p`
-  margin: 0;
+  margin: ${({ margin }) => margin || 0}px 0;
 
   strong {
     color: ${({ theme }) => makeSecondary(theme)};

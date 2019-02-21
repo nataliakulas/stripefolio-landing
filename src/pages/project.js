@@ -25,7 +25,11 @@ export default () => {
         </P>
         <Wrapper>
           <Preview src="https://www.cid.rzeszow.pl" />
-          <a href="https://www.cid.rzeszow.pl">
+          <a
+            href="https://www.cid.rzeszow.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Centrum Inwestycji Deweloperskich
           </a>
         </Wrapper>
@@ -103,6 +107,39 @@ const Wrapper = styled.div`
   height: 220px;
   position: relative;
 
+  a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:before,
+    &:after {
+      width: 250px;
+    }
+
+    &:before {
+      top: -2px;
+    }
+
+    &:after {
+      top: 47px;
+      bottom: unset;
+    }
+
+    @media (min-width: 375px) {
+      &:before,
+      &:after {
+        width: 275px;
+      }
+
+      &:after {
+        top: 23px;
+      }
+    }
+  }
+
   @media (min-width: 375px) {
     height: 240px;
   }
@@ -120,6 +157,7 @@ const Preview = styled.iframe`
   left: -835px;
   transform: scale(0.13);
 
+  background-color: ${color.grey};
   border: none;
   overflow: hidden;
   pointer-events: none;

@@ -94,6 +94,8 @@ export default () => {
             <LinkButtonOuter
               theme={theme}
               href="https://stripefolio-deprecated.surge.sh/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Show <i>currently-not-so-actual</i> portfolio
             </LinkButtonOuter>

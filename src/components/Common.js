@@ -103,3 +103,11 @@ export const LinkButton = `
     padding: 15px 20px;
   }
 `;
+
+export const Panel = `
+  width: 100%;
+  background-color: ${color.white};
+  margin: 20px auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+`;

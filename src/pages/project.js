@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+
 import color from "../shared/colors";
 import type from "../shared/consts";
+
 import { Layout, P } from "../components";
+import { Panel } from "../components/Common";
 
 export default () => {
   return (
@@ -55,11 +58,8 @@ export default () => {
 };
 
 const Section = styled.div`
-  width: 100%;
-  background-color: ${color.white};
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin: 20px auto;
+  ${Panel};
+
   padding: 20px 20px 25px 20px;
 
   ${P} {

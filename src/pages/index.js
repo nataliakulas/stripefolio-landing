@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import color from "../shared/colors";
 import type from "../shared/consts";
 import { makePrimary } from "../shared/helpers";
 
@@ -16,6 +15,7 @@ import {
   H1,
   P
 } from "../components";
+import { Panel, FlexCentered, NoBorder } from "../components/Common";
 
 export default () => {
   const [settings, toggleSettings] = useState(false);
@@ -102,11 +102,7 @@ export default () => {
 };
 
 const Section = styled.div`
-  width: 100%;
-  background-color: ${color.white};
-  overflow-x: hidden;
-  overflow-y: scroll;
-  margin: 20px auto;
+  ${Panel};
 
   @media (min-width: 375px) {
     max-height: 500px;
@@ -152,16 +148,14 @@ const Content = styled.div`
 `;
 
 const Bin = styled.div`
-  display: flex;
+  ${FlexCentered};
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   margin: 30px auto 10px auto;
 
   @media (min-width: 568px) {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
   @media (min-width: 768px) {
@@ -170,6 +164,8 @@ const Bin = styled.div`
 `;
 
 const SettingsBar = styled.div`
+  ${NoBorder};
+
   width: 75px;
   height: 125px;
 
@@ -184,8 +180,6 @@ const SettingsBar = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
 
-  background-color: ${color.white};
-
   padding: 0 8px;
 
   transition: transform 0.3s ease;
@@ -194,9 +188,6 @@ const SettingsBar = styled.div`
 const Square = styled.div`
   min-width: 20px;
   min-height: 20px;
-
-  font-weight: 700;
-  text-transform: uppercase;
 
   background-color: ${({ theme }) => theme};
   margin: 7px;

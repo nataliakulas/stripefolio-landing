@@ -8,10 +8,11 @@ import color from "../shared/colors";
 import { makePrimary } from "../shared/helpers";
 
 import Global from "./Global";
+import { FlexCentered } from "../components/Common";
 
 import favicon from "../images/favicon.ico";
 
-const Layout = ({ children, theme }) => (
+export default ({ children, theme }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -41,9 +42,7 @@ const Layout = ({ children, theme }) => (
           <Container>
             <Row>
               <Col xs={12} md={10} lg={8} offset={{ md: 1, lg: 2 }}>
-                <Wrapper>
-                {children}
-                </Wrapper>
+                <Wrapper>{children}</Wrapper>
               </Col>
             </Row>
           </Container>
@@ -52,8 +51,6 @@ const Layout = ({ children, theme }) => (
     )}
   />
 );
-
-export default Layout;
 
 const Background = styled.div`
   height: 100vh;
@@ -64,12 +61,11 @@ const Background = styled.div`
 `;
 
 const Wrapper = styled.div`
+  ${FlexCentered};
+
   height: 100vh;
 
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   overflow: hidden;
 

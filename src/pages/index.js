@@ -50,7 +50,9 @@ export default () => {
             rel="noopener noreferrer"
             top={50}
           >
-            <Label theme={theme}>LinkedIn</Label>
+            <Label link theme={theme}>
+              LinkedIn
+            </Label>
             <Icon id={type.LINKEDIN} theme={theme} />
           </LinkButton>
           <LinkButton
@@ -59,7 +61,9 @@ export default () => {
             rel="noopener noreferrer"
             top={100}
           >
-            <Label theme={theme}>Github</Label>
+            <Label link theme={theme}>
+              Github
+            </Label>
             <Icon id={type.GITHUB} theme={theme} />
           </LinkButton>
           <H1 theme={theme}>Hello!</H1>
@@ -75,7 +79,7 @@ export default () => {
         </Content>
         <Content>
           <P theme={theme}>
-            That is because I'm fully dedicated in <strong>developing</strong>
+            That is because I'm fully dedicated to <strong>developing</strong>
             &nbsp;real estate portal (with custom admin panel) and if I have
             some spare time, I'm <strong>mentoring</strong> junior front-end
             dev.

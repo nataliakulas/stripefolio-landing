@@ -1,16 +1,34 @@
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import color from "../shared/colors";
 import { makeSecondary } from "../shared/helpers";
 
 export const Label = styled.span`
   min-width: 75px;
+  position: relative;
   font-weight: 700;
   line-height: 40px;
   color: ${({ theme }) => makeSecondary(theme)};
   letter-spacing: 0.55px;
   transform: translateX(-75px);
   transition: all 0.3s;
+
+  ${({ link }) =>
+    link &&
+    css`
+      &:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        background-color: ${color.turquoise};
+      }
+
+      &:after {
+        bottom: 10px;
+      }
+    `}
 `;
 
 export const Button = styled.button`
@@ -96,7 +114,7 @@ export const LinkButton = styled.a`
 export const LinkOuter = styled.a`
   width: 100%;
   height: 50px;
-
+  position: relative;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -109,6 +127,30 @@ export const LinkOuter = styled.a`
   padding: 5px 10px;
 
   cursor: pointer;
+
+  &:before,
+  &:after {
+    display: none;
+    content: "";
+    width: calc(100% - 4px);
+    height: 2px;
+    position: absolute;
+    left: 2px;
+    background-color: ${({ theme }) => makeSecondary(theme)};
+  }
+
+  &:before {
+    top: 2px;
+  }
+
+  &:after {
+    bottom: 2px;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    display: block;
+  }
 
   @media (min-width: 375px) {
     padding: 15px 10px;
@@ -129,6 +171,7 @@ export const LinkOuter = styled.a`
 export const LinkInner = styled(Link)`
   width: 100%;
   height: 50px;
+  position: relative;
 
   font-weight: 700;
   font-size: 14px;
@@ -144,6 +187,30 @@ export const LinkInner = styled(Link)`
   margin-bottom: 10px;
 
   cursor: pointer;
+
+  &:before,
+  &:after {
+    display: none;
+    content: "";
+    width: calc(100% - 4px);
+    height: 2px;
+    position: absolute;
+    left: 2px;
+    background-color: ${color.white};
+  }
+
+  &:before {
+    top: 2px;
+  }
+
+  &:after {
+    bottom: 2px;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    display: block;
+  }
 
   @media (min-width: 375px) {
     padding: 15px 10px;

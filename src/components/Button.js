@@ -26,6 +26,14 @@ export const Label = styled.span`
 
 export const IconNormalButton = styled.button`
   ${IconButton};
+  width: 80px;
+
+  span {
+    line-height: 35px;
+    text-align: center;
+    color: ${color.white};
+    background-color: ${color.turquoise};
+  }
 `;
 
 export const IconLinkButton = styled.a`

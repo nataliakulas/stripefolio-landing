@@ -32,27 +32,27 @@ body {
   outline: none;
 }
 
- ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
 
-  ::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
-  }
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: ${color.grey};
-    border: 0 none ${color.grey};
-    border-radius: 0;
-  }
+::-webkit-scrollbar-thumb {
+  background: ${color.grey};
+  border: 0 none ${color.grey};
+  border-radius: 0;
+}
 
-  ::-webkit-scrollbar-track {
-    background: ${color.white};
-    border: 0 none ${color.white};
-    border-radius: 2px;
-  }
+::-webkit-scrollbar-track {
+  background: ${color.white};
+  border: 0 none ${color.white};
+  border-radius: 2px;
+}
 
   ::-webkit-scrollbar-corner {
     background: transparent;

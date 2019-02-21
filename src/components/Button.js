@@ -29,10 +29,17 @@ export const IconNormalButton = styled.button`
   width: 80px;
 
   span {
+    min-width: 80px;
     line-height: 35px;
     text-align: center;
     color: ${color.white};
     background-color: ${color.turquoise};
+  }
+
+  &:hover {
+    span {
+      transform: translateX(15px);
+    }
   }
 `;
 

@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import color from "../shared/colors";
 import { makeSecondary } from "../shared/helpers";
-import { LinkButton, IconButton, Bar } from "./Common";
+import { LinkButton, IconButton, Bar } from "./Mixins";
 
 export const Label = styled.span`
   min-width: 75px;

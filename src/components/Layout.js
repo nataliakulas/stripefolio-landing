@@ -8,7 +8,7 @@ import color from "../shared/colors";
 import { makePrimary } from "../shared/helpers";
 
 import Global from "./Global";
-import { FlexCentered } from "../components/Common";
+import { FlexCentered } from "../components/Mixins";
 
 import favicon from "../images/favicon.ico";
 

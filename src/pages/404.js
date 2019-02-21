@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import type from "../shared/consts";
 import { Layout, H1 } from "../components";
-import { Panel, FlexCentered } from "../components/Common";
+import { Panel, FlexCentered } from "../components/Mixins";
 
 export default () => {
   return (

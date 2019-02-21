@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import type from "../shared/consts";
-import { makePrimary } from "../shared/helpers";
+import { makePrimary, makeSecondary } from "../shared/helpers";
 
 import {
   Layout,
@@ -15,7 +15,7 @@ import {
   H1,
   P
 } from "../components";
-import { Panel, FlexCentered, NoBorder } from "../components/Common";
+import { Panel, FlexCentered, NoBorder } from "../components/Mixins";
 
 export default () => {
   const [settings, toggleSettings] = useState(false);
@@ -23,7 +23,7 @@ export default () => {
 
   return (
     <Layout theme={theme}>
-      <Section>
+      <Section theme={makeSecondary(theme)}>
         <Content>
           <SettingsBar visible={settings}>
             <Separator theme={makePrimary(theme)} />
@@ -103,6 +103,7 @@ export default () => {
 
 const Section = styled.div`
   ${Panel};
+  box-shadow: 0 0 0 10px ${({ theme }) => theme};
 
   @media (min-width: 375px) {
     max-height: 500px;

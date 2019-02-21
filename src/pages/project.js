@@ -5,7 +5,7 @@ import color from "../shared/colors";
 import type from "../shared/consts";
 
 import { Layout, P } from "../components";
-import { Bar, Panel } from "../components/Common";
+import { Bar, Panel } from "../components/Mixins";
 
 export default () => {
   return (

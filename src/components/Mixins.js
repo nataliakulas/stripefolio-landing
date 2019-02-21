@@ -21,6 +21,7 @@ export const NoBorder = `
 export const Panel = `
   width: 100%;
   background-color: ${color.white};
+  box-shadow: 0 0 0 10px ${color.turquoise};
   margin: 20px auto;
   overflow-x: hidden;
   overflow-y: scroll;

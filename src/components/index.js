@@ -1,18 +1,18 @@
 import Global from "./Global";
 import Layout from "./Layout";
 import Icon from "./Icon";
-import { Button, Label, LinkButton, LinkOuter, LinkInner } from "./Button";
+import { IconNormalButton, Label, IconLinkButton, LinkButtonOuter, LinkButtonInner } from "./Button";
 import { H1, P } from "./Fonts";
 
 export {
   Global,
   Layout,
   Icon,
-  Button,
+  IconNormalButton,
   Label,
-  LinkButton,
-  LinkOuter,
-  LinkInner,
+  IconLinkButton,
+  LinkButtonOuter,
+  LinkButtonInner,
   H1,
   P
 };

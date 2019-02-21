@@ -8,11 +8,11 @@ import { makePrimary } from "../shared/helpers";
 import {
   Layout,
   Icon,
-  Button,
+  IconNormalButton,
   Label,
-  LinkButton,
-  LinkOuter,
-  LinkInner,
+  IconLinkButton,
+  LinkButtonOuter,
+  LinkButtonInner,
   H1,
   P
 } from "../components";
@@ -40,11 +40,11 @@ export default () => {
               onClick={() => changeTheme(type.GREY)}
             />
           </SettingsBar>
-          <Button onClick={() => toggleSettings(!settings)}>
+          <IconNormalButton onClick={() => toggleSettings(!settings)}>
             <Label theme={theme}>Settings</Label>
             <Icon id={type.SETTINGS} theme={theme} />
-          </Button>
-          <LinkButton
+          </IconNormalButton>
+          <IconLinkButton
             href="https://www.linkedin.com/in/natalia-kulas"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,8 +54,8 @@ export default () => {
               LinkedIn
             </Label>
             <Icon id={type.LINKEDIN} theme={theme} />
-          </LinkButton>
-          <LinkButton
+          </IconLinkButton>
+          <IconLinkButton
             href="https://github.com/nataliakulas"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default () => {
               Github
             </Label>
             <Icon id={type.GITHUB} theme={theme} />
-          </LinkButton>
+          </IconLinkButton>
           <H1 theme={theme}>Hello!</H1>
           <P>
             If you are here, it means, that you are faster
@@ -85,15 +85,15 @@ export default () => {
             dev.
           </P>
           <Bin>
-            <LinkInner theme={theme} to="/project">
+            <LinkButtonInner theme={theme} to="/project">
               Check out this cool project of yours
-            </LinkInner>
-            <LinkOuter
+            </LinkButtonInner>
+            <LinkButtonOuter
               theme={theme}
               href="https://stripefolio-deprecated.surge.sh/"
             >
               Show <i>currently-not-so-actual</i> portfolio
-            </LinkOuter>
+            </LinkButtonOuter>
           </Bin>
         </Content>
       </Section>

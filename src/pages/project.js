@@ -96,10 +96,6 @@ const Section = styled.div`
       display: block;
     }
   }
-
-  @media (min-width: 768px) {
-    overflow-y: auto;
-  }
 `;
 
 const Wrapper = styled.div`

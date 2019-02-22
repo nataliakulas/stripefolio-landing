@@ -30,7 +30,7 @@ export const Panel = `
   box-shadow: 0 0 0 10px ${color.turquoise};
   margin: 20px auto;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export const Bar = `
@@ -114,12 +114,22 @@ export const LinkButton = `
   }
   
   @media (min-width: 568px) {
-    width: 260px;
+    width: 220px;
     height: 70px;
+  }
+  
+  @media (min-width: 667px) {
+    width: 280px;
+  }
+  
+  @media (min-width: 736px) {
+    width: 300px;
+    height: 50px;
   }
   
   @media (min-width: 768px) {
     width: 220px;
+    height: 70px;
     font-size: 15px;
     padding: 15px 20px;
   }

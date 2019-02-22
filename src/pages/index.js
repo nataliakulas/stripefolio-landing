@@ -89,7 +89,7 @@ export default () => {
           </P>
           <Bin>
             <LinkButtonInner theme={theme} to="/project">
-              Check out this cool project of yours
+              I want to check out this cool&nbsp;project
             </LinkButtonInner>
             <LinkButtonOuter
               theme={theme}
@@ -97,7 +97,7 @@ export default () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Show <i>currently-not-so-actual</i> portfolio
+              Show me your <i>not-so-actual</i> portfolio
             </LinkButtonOuter>
           </Bin>
         </Content>
@@ -109,19 +109,6 @@ export default () => {
 const Section = styled.div`
   ${Panel};
   box-shadow: 0 0 0 10px ${({ theme }) => theme};
-
-  @media (min-width: 375px) {
-    max-height: 500px;
-    overflow-y: hidden;
-  }
-
-  @media (min-width: 568px) {
-    overflow-y: scroll;
-  }
-
-  @media (min-width: 768px) {
-    overflow-y: hidden;
-  }
 `;
 
 const Content = styled.div`
